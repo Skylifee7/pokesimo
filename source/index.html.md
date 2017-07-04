@@ -9,8 +9,7 @@ language_tabs:
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
-
+  
 includes:
   - errors
 
@@ -19,11 +18,12 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Otsimo's Pokemon API! You can use our API to access Pokemon API endpoints, which can get information about various pokemons, types, moves in a huge load of pokemon information database.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Currently our API is only accessible from Shell and therefore we have no language bindings(for now)! You can view code examples in the dark area to the right, and try it in your own shell.
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+This API created from the guys and gals from the [Otsimo](https://otsimo.com) with love!
+Feel free to reach out.
 
 # Authentication
 
@@ -65,62 +65,42 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# Pokemon Types
 
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+## Get All Types
 
 ```shell
-curl "http://example.com/api/kittens"
+curl "http://localhost/api/list/types"
   -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
+{
+"name": "Bug",
+"effectiveAgainst": [
+"Dark",
+"Grass",
+"Psychic"
+],
+"weakAgainst": [
+"Fairy",
+"Fighting",
+"Fire",
+"Flying",
+"Ghost",
+"Poison",
+"Steel"
 ]
+}
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all pokemon types(e.g Bug, Electric).
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://localhost/api/list/types`
 
 ### Query Parameters
 
