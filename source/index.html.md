@@ -102,18 +102,17 @@ This endpoint retrieves all pokemon types(e.g Bug, Electric).
 
 `GET http://localhost/api/list/types`
 
-### Query Parameters
+### URL Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+Parameter | Description
+--------- | -----------
+ID | The ID of the kitten to retrieve
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific Kitten
+## Get a Specific Kind of Pokemons
 
 ```ruby
 require 'kittn'
@@ -161,9 +160,11 @@ This endpoint retrieves a specific kitten.
 
 `GET http://example.com/kittens/<ID>`
 
-### URL Parameters
+### Query Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+Parameter | Default | Description
+--------- | ------- | -----------
+include_cats | false | If set to true, the result will also include cats.
+available | true | If set to false, the result will include kittens that have already been adopted.
+
 
