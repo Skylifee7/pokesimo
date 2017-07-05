@@ -128,8 +128,9 @@ Simply send HTTP GET request to our endpoint:
 
 Parameter | Default | Possible Values
 --------- | ------- | -----------
-sortBy | number | BaseStamina,BaseAttack,FleeRate, etc.
+sortBy | number | BaseStamina,FleeRate, etc.
 type | N/A | Electric, Bug, etc.
+order | ASC | DESC, ASC.
 
 ### Some Example Use Cases
 
@@ -137,7 +138,7 @@ type | N/A | Electric, Bug, etc.
 
 `GET https://pokesimo.herokuapp.com/api/list?type=Dragon`
 
-`GET https://pokesimo.herokuapp.com/api/list?type=Fire&sortBy=BaseStamina`
+`GET https://pokesimo.herokuapp.com/api/list?type=Fire&sortBy=BaseStamina&order=ASC`
 
 <aside class="success">
 Remember if you want to sort the response with values which include spaces, add "%20" character!
