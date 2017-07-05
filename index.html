@@ -350,12 +350,17 @@ Currently, Pokesimo API does not need Authentication headers for its pre-alpha s
 <tr>
 <td>sortBy</td>
 <td>number</td>
-<td>BaseStamina,BaseAttack,FleeRate, etc.</td>
+<td>BaseStamina,FleeRate, etc.</td>
 </tr>
 <tr>
 <td>type</td>
 <td>N/A</td>
 <td>Electric, Bug, etc.</td>
+</tr>
+<tr>
+<td>order</td>
+<td>ASC</td>
+<td>DESC, ASC.</td>
 </tr>
 </tbody></table>
 
@@ -365,7 +370,7 @@ Currently, Pokesimo API does not need Authentication headers for its pre-alpha s
 
 <p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/list?type=Dragon</code></p>
 
-<p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/list?type=Fire&amp;sortBy=BaseStamina</code></p>
+<p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/list?type=Fire&amp;sortBy=BaseStamina&amp;order=ASC</code></p>
 
 <aside class="success">
 Remember if you want to sort the response with values which include spaces, add &ldquo;%20&rdquo; character!
@@ -437,16 +442,16 @@ You have 3 options to add after the /get. Those are /pokemon , /move or /type.
 </tr>
 </thead><tbody>
 <tr>
+<td>304</td>
+<td>Not Modified &ndash; Resource already is there.</td>
+</tr>
+<tr>
 <td>401</td>
 <td>Unauthorized &ndash; Your API key is wrong</td>
 </tr>
 <tr>
 <td>404</td>
 <td>Not Found &ndash; The specified data item could not be found</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&rsquo;m a teapot</td>
 </tr>
 <tr>
 <td>500</td>
