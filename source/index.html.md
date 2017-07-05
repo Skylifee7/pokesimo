@@ -15,7 +15,7 @@ search: true
 
 # Introduction
 
-Welcome to the *Otsimo*'s **Poke-simo API**! :zap: You can use our API to access Pokemon API endpoints, which can get information about various pokemons, types, moves in a huge load of pokemon information database.
+Welcome to the *Otsimo*'s **Poke-simo API**! You can use our API to access Pokemon API endpoints, which can get information about various pokemons, types, moves in a huge load of pokemon information database.
 
 Currently our API is only accessible from Shell and therefore we have no language bindings(*for now*)! You can view code examples in the dark area to the right, and try it in your own shell.
 
@@ -174,13 +174,13 @@ This endpoint retrieves more detailed info about specific pokemon, move or type.
 
 **Entry point**
 
-`GET https://pokesimo.herokuapp.com/api/get/`
+`GET https://pokesimo.herokuapp.com/api/get/`{one-of-the-three-options}/{name}
 
 ### URL Parameters
 
 Parameter | Description
 --------------------- | --------------------------------- |
-Name |  The name of the (pokemon-move-or) to retrieve
+Name |  The name of the (pokemon-move-type) to retrieve
 
 ### Some Example Use Cases
 
