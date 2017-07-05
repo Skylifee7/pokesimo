@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Pokesimo API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -219,7 +219,7 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='https://github.com/Skylifee7'>Developed by Skylifee7</a></li>
+            <li><a href='https://www.linkedin.com/in/gökcan-değirmenci-264674b2/'>Developed by Skylifee7</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -240,11 +240,11 @@ Feel free to reach out.</p>
 <p>To authorize, use this code:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"http://localhost/api/"</span>
+curl <span class="s2">"https://pokesimo.herokuapp.com/api"</span>
   -H <span class="s2">"Authorization: lhkJKHlghdGSFS42faewf86"</span>
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code class="prettyprint">lhkJKHlghdGSFS42faewf86</code> with your API key. ( currently we don&rsquo;t need it, but we will need :) )</p>
+<p>Make sure to replace <code class="prettyprint">lhkJKHlghdGSFS42faewf86</code> with your API key. ( currently we don&rsquo;t need it but we will, soon :) )</p>
 </blockquote>
 
 <p><strong>Pokesimo</strong> uses API keys to allow access to the API. You can register a new Pokesimo API key at our <a href="http://otsimo.com/developers">developer portal</a>.</p>
@@ -253,14 +253,14 @@ curl <span class="s2">"http://localhost/api/"</span>
 
 <p><code class="prettyprint">Authorization: lhkJKHlghdGSFS42faewf86</code></p>
 
-<aside class="notice">
+<aside class="info">
 Currently, Pokesimo API does not need Authentication headers for its pre-alpha stage.
 </aside>
 
-<h1 id="pokemon-types">Pokemon Types</h1>
+<h1 id="list-api">List API</h1>
 
-<h2 id="get-all-types">Get All Types</h2>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost/api/list/types"</span>
+<h2 id="list-all-types">List All Types</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pokesimo.herokuapp.com/api/list/types"</span>
   -H <span class="s2">"Authorization: lhkJKHlghdGSFS42faewf86"</span>
 </code></pre>
 <blockquote>
@@ -288,7 +288,7 @@ Currently, Pokesimo API does not need Authentication headers for its pre-alpha s
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://localhost/api/list/types</code></p>
+<p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/list/types</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -304,8 +304,8 @@ Currently, Pokesimo API does not need Authentication headers for its pre-alpha s
 </tr>
 </tbody></table>
 
-<h2 id="get-specific-kind-of-pokemons">Get Specific Kind of Pokemons</h2>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/list?type=Electric"</span>
+<h2 id="list-specific-type-of-pokemons">List Specific Type of Pokemons</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pokesimo.herokuapp.com/api/list?type=Electric"</span>
   -H <span class="s2">"Authorization: lhkJKHlghdGSFS42faewf86"</span>
 </code></pre>
 <blockquote>
@@ -336,7 +336,7 @@ Currently, Pokesimo API does not need Authentication headers for its pre-alpha s
 
 <p>Simply send HTTP GET request to our endpoint:</p>
 
-<p><code class="prettyprint">GET http://example.com/api/list?type=Electric&amp;sortBy=Capture%20Rate</code></p>
+<p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/list?type=Electric&amp;sortBy=Capture%20Rate</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -361,21 +361,74 @@ Currently, Pokesimo API does not need Authentication headers for its pre-alpha s
 
 <h3 id="some-example-use-cases">Some Example Use Cases</h3>
 
-<p><code class="prettyprint">GET http://example.com/api/list?type=Electric&amp;sortBy=Capture%20Rate</code></p>
+<p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/list?type=Electric&amp;sortBy=Capture%20Rate</code></p>
 
-<p><code class="prettyprint">GET http://example.com/api/list?type=Dragon</code></p>
+<p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/list?type=Dragon</code></p>
 
-<p><code class="prettyprint">GET http://example.com/api/list?type=Fire&amp;sortBy=BaseStamina</code></p>
+<p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/list?type=Fire&amp;sortBy=BaseStamina</code></p>
 
 <aside class="success">
-Remember if you want to sort the response with values with spaces, add &ldquo;%20&rdquo; character!
+Remember if you want to sort the response with values which include spaces, add &ldquo;%20&rdquo; character!
+</aside>
+
+<h1 id="get-api">Get API</h1>
+
+<h2 id="get-specific-pokemon-move-or-type">Get Specific Pokemon, Move or Type</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pokesimo.herokuapp.com/api/get/pokemon/Pikachu"</span>
+-H <span class="s2">"Authorization: lhkJKHlghdGSFS42faewf86"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">{</span><span class="w">
+</span><span class="s2">"Number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"025"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pikachu"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"Classification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DataNotInGameMaster"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"Type I"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+</span><span class="s2">"Electric"</span><span class="w">
+</span><span class="p">],</span><span class="w">
+</span><span class="err">...</span><span class="w">
+</span><span class="err">..</span><span class="w">
+</span><span class="err">.</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves more detailed info about specific pokemon, move or type.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><strong>Entry point</strong></p>
+
+<p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/get/</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Name</td>
+<td>The name of the (pokemon-move-or) to retrieve</td>
+</tr>
+</tbody></table>
+
+<h3 id="some-example-use-cases">Some Example Use Cases</h3>
+
+<p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/get/pokemon/Mewtwo</code></p>
+
+<p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/get/move/Heat%20Wave</code></p>
+
+<p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/get/type/Fire</code></p>
+
+<aside class="success">
+You have 3 options to add after the /get. Those are /pokemon , /move or /type.
 </aside>
 
           <h1 id="errors">Errors</h1>
 
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&lsquo;s frontmatter. Files are included in the order listed.</aside>
-
-<p>The Kittn API uses the following error codes:</p>
+<p>The Pokesimo API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -384,20 +437,12 @@ Remember if you want to sort the response with values with spaces, add &ldquo;%2
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
-</tr>
-<tr>
 <td>401</td>
 <td>Unauthorized &ndash; Your API key is wrong</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
-</tr>
-<tr>
 <td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
+<td>Not Found &ndash; The specified data item could not be found</td>
 </tr>
 <tr>
 <td>418</td>
@@ -412,6 +457,8 @@ Remember if you want to sort the response with values with spaces, add &ldquo;%2
 <td>Service Unavailable &ndash; We&rsquo;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
+
+<aside class="notice"> 2xx codes mean successful operation. </aside>
 
       </div>
       <div class="dark-box">
