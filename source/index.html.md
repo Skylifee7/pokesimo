@@ -1,11 +1,11 @@
 ---
-title: API Reference
+title: Pokesimo API Reference
 
 language_tabs:
   - shell
   
 toc_footers:
-- <a href='https://github.com/Skylifee7'>Developed by Skylifee7</a>
+- <a href='https://www.linkedin.com/in/gökcan-değirmenci-264674b2/'>Developed by Skylifee7</a>
   
 includes:
   - errors
@@ -28,11 +28,11 @@ Feel free to reach out.
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "http://localhost/api/"
+curl "https://pokesimo.herokuapp.com/api"
   -H "Authorization: lhkJKHlghdGSFS42faewf86"
 ```
 
-> Make sure to replace `lhkJKHlghdGSFS42faewf86` with your API key. ( currently we don't need it, but we will need :) )
+> Make sure to replace `lhkJKHlghdGSFS42faewf86` with your API key. ( currently we don't need it but we will, soon :) )
 
 **Pokesimo** uses API keys to allow access to the API. You can register a new Pokesimo API key at our [developer portal](http://otsimo.com/developers).
 
@@ -40,16 +40,16 @@ Pokesimo expects for the API key to be included in all API requests to the serve
 
 `Authorization: lhkJKHlghdGSFS42faewf86`
 
-<aside class="notice">
+<aside class="info">
 Currently, Pokesimo API does not need Authentication headers for its pre-alpha stage.
 </aside>
 
-# Pokemon Types
+# List API
 
-## Get All Types
+## List All Types
 
 ```shell
-curl "http://localhost/api/list/types"
+curl "https://pokesimo.herokuapp.com/api/list/types"
   -H "Authorization: lhkJKHlghdGSFS42faewf86"
 ```
 
@@ -79,7 +79,7 @@ This endpoint retrieves all pokemon types(e.g Bug, Electric).
 
 ### HTTP Request
 
-`GET http://localhost/api/list/types`
+`GET https://pokesimo.herokuapp.com/api/list/types`
 
 ### URL Parameters
 
@@ -87,10 +87,10 @@ Parameter | Description
 --------- | -----------
 Name | The name of the pokemon to retrieve
 
-## Get Specific Kind of Pokemons
+## List Specific Type of Pokemons
 
 ```shell
-curl "http://example.com/api/list?type=Electric"
+curl "https://pokesimo.herokuapp.com/api/list?type=Electric"
   -H "Authorization: lhkJKHlghdGSFS42faewf86"
 ```
 
@@ -122,7 +122,7 @@ This endpoint retrieves spesific type of pokemons.
 
 Simply send HTTP GET request to our endpoint:
 
-`GET http://example.com/api/list?type=Electric&sortBy=Capture%20Rate`
+`GET https://pokesimo.herokuapp.com/api/list?type=Electric&sortBy=Capture%20Rate`
 
 ### Query Parameters
 
@@ -133,14 +133,65 @@ type | N/A | Electric, Bug, etc.
 
 ### Some Example Use Cases
 
-`GET http://example.com/api/list?type=Electric&sortBy=Capture%20Rate`
+`GET https://pokesimo.herokuapp.com/api/list?type=Electric&sortBy=Capture%20Rate`
 
-`GET http://example.com/api/list?type=Dragon`
+`GET https://pokesimo.herokuapp.com/api/list?type=Dragon`
 
-`GET http://example.com/api/list?type=Fire&sortBy=BaseStamina`
+`GET https://pokesimo.herokuapp.com/api/list?type=Fire&sortBy=BaseStamina`
 
 <aside class="success">
-Remember if you want to sort the response with values with spaces, add "%20" character!
+Remember if you want to sort the response with values which include spaces, add "%20" character!
+</aside>
+
+# Get API
+
+## Get Specific Pokemon, Move or Type
+
+```shell
+curl "https://pokesimo.herokuapp.com/api/get/pokemon/Pikachu"
+-H "Authorization: lhkJKHlghdGSFS42faewf86"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+{
+"Number": "025",
+"Name": "Pikachu",
+"Classification": "DataNotInGameMaster",
+"Type I": [
+"Electric"
+],
+...
+..
+.
+```
+
+This endpoint retrieves more detailed info about specific pokemon, move or type.
+
+### HTTP Request
+
+**Entry point**
+
+`GET https://pokesimo.herokuapp.com/api/get/`
+
+### URL Parameters
+
+Parameter | Description
+--------------------- | --------------------------------- |
+Name |  The name of the (pokemon-move-or) to retrieve
+
+### Some Example Use Cases
+
+`GET https://pokesimo.herokuapp.com/api/get/pokemon/Mewtwo`
+
+`GET https://pokesimo.herokuapp.com/api/get/move/Heat%20Wave`
+
+`GET https://pokesimo.herokuapp.com/api/get/type/Fire`
+
+<aside class="success">
+You have 3 options to add after the /get. Those are /pokemon , /move or /type.
 </aside>
 
 
