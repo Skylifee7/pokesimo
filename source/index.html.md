@@ -175,7 +175,7 @@ This endpoint retrieves more detailed info about specific pokemon, move or type.
 
 **Entry point**
 
-`GET https://pokesimo.herokuapp.com/api/get/`{one-of-the-three-options}/{name}
+`GET https://pokesimo.herokuapp.com/api/get/{one-of-the-three-options}/{name}`
 
 ### URL Parameters
 
