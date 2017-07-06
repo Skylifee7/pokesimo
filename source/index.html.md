@@ -19,8 +19,8 @@ Welcome to the *Otsimo*'s **Poke-simo API**! You can use our API to access Pokem
 
 Currently our API is only accessible from Shell and therefore we have no language bindings(*for now*)! You can view code examples in the dark area to the right, and try it in your own shell.
 
-This API created from the guys and gals from the [Otsimo](https://otsimo.com) with love!
-Feel free to reach out.
+This API created by the guys and gals from the [Otsimo](https://otsimo.com) with love!
+Feel free to reach out!
 
 # Authentication
 
@@ -138,7 +138,7 @@ order | ASC | DESC, ASC.
 
 `GET https://pokesimo.herokuapp.com/api/list?type=Dragon`
 
-`GET https://pokesimo.herokuapp.com/api/list?type=Fire&sortBy=BaseStamina&order=ASC`
+`GET https://pokesimo.herokuapp.com/api/list?type=Fire&sortBy=BaseStamina&order=DESC`
 
 <aside class="success">
 Remember if you want to sort the response with values which include spaces, add "%20" character!
