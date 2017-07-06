@@ -19,8 +19,8 @@ Welcome to the *Otsimo*'s **Poke-simo API**! You can use our API to access Pokem
 
 Currently our API is only accessible from Shell and therefore we have no language bindings(*for now*)! You can view code examples in the dark area to the right, and try it in your own shell.
 
-This API created by the guys and gals from the [Otsimo](https://otsimo.com) with love!
-Feel free to reach out!
+This API created by the guys and gals from [Otsimo](https://otsimo.com) with love!
+Feel free to reach out! :)
 
 # Authentication
 
@@ -86,6 +86,10 @@ This endpoint retrieves all pokemon types(e.g Bug, Electric).
 Parameter | Description
 --------- | -----------
 [types] | List all  possible pokemon types
+
+### Example Use Case
+
+`GET https://pokesimo.herokuapp.com/api/list/types`
 
 ## List Specific Type of Pokemons
 
@@ -190,6 +194,8 @@ Name |  The name of the (pokemon-move-type) to retrieve
 `GET https://pokesimo.herokuapp.com/api/get/move/Heat%20Wave`
 
 `GET https://pokesimo.herokuapp.com/api/get/type/Fire`
+
+`GET https://pokesimo.herokuapp.com/api/get/moves`
 
 <aside class="success">
 You have 3 options to add after the /get. Those are /pokemon , /move or /type.
