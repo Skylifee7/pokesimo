@@ -79,13 +79,13 @@ This endpoint retrieves all pokemon types(e.g Bug, Electric).
 
 ### HTTP Request
 
-`GET https://pokesimo.herokuapp.com/api/list/types`
+`GET https://pokesimo.herokuapp.com/api/list/`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-Name | The name of the pokemon to retrieve
+[types] | List all  possible pokemon types
 
 ## List Specific Type of Pokemons
 
