@@ -231,8 +231,8 @@
 
 <p>Currently our API is only accessible from Shell and therefore we have no language bindings(<em>for now</em>)! You can view code examples in the dark area to the right, and try it in your own shell.</p>
 
-<p>This API created by the guys and gals from the <a href="https://otsimo.com">Otsimo</a> with love!
-Feel free to reach out!</p>
+<p>This API created by the guys and gals from <a href="https://otsimo.com">Otsimo</a> with love!
+Feel free to reach out! :)</p>
 
 <h1 id="authentication">Authentication</h1>
 
@@ -303,6 +303,10 @@ Currently, Pokesimo API does not need Authentication headers for its pre-alpha s
 <td>List all  possible pokemon types</td>
 </tr>
 </tbody></table>
+
+<h3 id="example-use-case">Example Use Case</h3>
+
+<p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/list/types</code></p>
 
 <h2 id="list-specific-type-of-pokemons">List Specific Type of Pokemons</h2>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pokesimo.herokuapp.com/api/list?type=Electric"</span>
@@ -426,6 +430,8 @@ Remember if you want to sort the response with values which include spaces, add 
 <p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/get/move/Heat%20Wave</code></p>
 
 <p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/get/type/Fire</code></p>
+
+<p><code class="prettyprint">GET https://pokesimo.herokuapp.com/api/get/moves</code></p>
 
 <aside class="success">
 You have 3 options to add after the /get. Those are /pokemon , /move or /type.
